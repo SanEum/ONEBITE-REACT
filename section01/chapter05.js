@@ -13,8 +13,7 @@ let myName = "이정환";
 let myLocation = "목동";
 let introduce = myName + myLocation;
 
-let introduceText = `${myName}은 ${myLocation}에 거주합니다.`
-
+let introduceText = `${myName}은 ${myLocation}에 거주합니다.`;
 
 // 3. Boolean Type
 let isSwitchOn = true;

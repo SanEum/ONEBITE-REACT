@@ -15,7 +15,6 @@ let strToNum1 = Number(str1); //숫자만
 let str2 = "10개";
 let strToNum2 = parseInt(str2); //문자 포함(숫자가 앞에)
 
-
 // -> 숫자 -> 문자열
 let num1 = 20;
 let numToStr1 = String(num1);
