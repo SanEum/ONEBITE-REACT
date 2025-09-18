@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 // 간단한 회원가입 폼
 // 1. 이름
@@ -14,8 +14,12 @@ function Register() {
         bio: "",
     });
 
+    const countRef = useRef(0);
+    const inputRef = useRef();
+
     function onChange(e) {
-        console.log(e.target.name, e.target.value);
+        countRef.current++;
+        console.log(countRef.current);
 
         setInput({
             ...input,
@@ -23,10 +27,18 @@ function Register() {
         });
     }
 
+    function onSubmit() {
+        if (input.name === "") {
+            //이름을 입력하는 DOM 요소 포커스
+            inputRef.current.focus();
+        }
+    }
+
     return (
         <div>
             <div>
                 <input
+                    ref={inputRef}
                     name="name"
                     value={input.name}
                     onChange={onChange}
@@ -60,6 +72,7 @@ function Register() {
                     onChange={onChange}
                 ></textarea>
             </div>
+            <button onClick={onSubmit}>제출</button>
         </div>
     );
 }
