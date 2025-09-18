@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Bulb() {
+function Bulb() {
   const [light, setLight] = useState("OFF");
   console.log(light);
 
@@ -22,3 +22,5 @@ export default function Bulb() {
     </div>
   );
 }
+
+export default Bulb;
