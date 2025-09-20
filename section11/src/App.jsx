@@ -1,4 +1,4 @@
-import { useState, useRef, useReducer, useCallback, use } from "react";
+import { useState, useRef, useReducer, useCallback,  createContext } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Editor from "./components/Editor";
@@ -25,6 +25,7 @@ const mocData = [
         date: new Date().getTime(),
     },
 ];
+
 function reducer(state, action) {
     switch (action.type) {
         case "CREATE":
@@ -41,6 +42,10 @@ function reducer(state, action) {
             return state;
     }
 }
+
+const TodoContext = createContext();
+console.log(TodoContext);
+
 
 function App() {
     const [todos, dispatch] = useReducer(reducer, mocData);
