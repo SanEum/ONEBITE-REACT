@@ -24,14 +24,16 @@ const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
 };
 
 // 고차 컴포넌트(HOC)
-export default memo(TodoItem, (prevProps, nextProps) => {
-    // 반환값에 따라, Props가 바뀌었는지 안바뀌었는지 판단
-    // T 안바뀜
-    // F 바뀜
-    if (prevProps.id !== nextProps.id) return false;
-    if (prevProps.isDone !== nextProps.isDone) return false;
-    if (prevProps.content !== nextProps.content) return false;
-    if (prevProps.date !== nextProps.date) return false;
+// export default memo(TodoItem, (prevProps, nextProps) => {
+//     // 반환값에 따라, Props가 바뀌었는지 안바뀌었는지 판단
+//     // T 안바뀜
+//     // F 바뀜
+//     if (prevProps.id !== nextProps.id) return false;
+//     if (prevProps.isDone !== nextProps.isDone) return false;
+//     if (prevProps.content !== nextProps.content) return false;
+//     if (prevProps.date !== nextProps.date) return false;
 
-    return true;
-});
+//     return true;
+// });
+
+export default memo(TodoItem);
